@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+
+package echotime;
+
+// The greeting service definition.
+service Echo {
+
+  rpc Echo ( stream EchoRequest) returns (stream EchoReply) {}
+
+}
+
+// The request message containing the user's name.
+message EchoRequest {
+  string input = 1;
+}
+
+// The response message containing the greetings
+message EchoReply {
+  string output = 1;
+  string nowtime = 2;
+}
